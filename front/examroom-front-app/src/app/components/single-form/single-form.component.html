@@ -1,0 +1,43 @@
+<h1 align='center'><b>Single Form</b></h1>
+
+<h3 align='center'>Candidate</h3>
+<table>
+    <tr>
+        <th class='colored'> Id </th>
+        <td> 1 </td>
+        <th class='colored'> Name </th>
+        <td> John </td>
+        <th class='colored'> Phone# </th>
+        <td> 1123141 </td>
+        <th class='colored'> Email </th>
+        <td> pera@hm.com </td>
+    </tr>
+</table>
+
+<h3 align='center'>Form</h3>
+<table>
+    <tr>
+        <th class='colored'> Form </th>
+        <td> Naziv f1 </td>
+        <th class='colored'> Status </th>
+        <td> Pending </td>
+        <th class='colored'> Total Waiting Time </th>
+        <td> 8 sati i 45 min </td>
+    </tr>
+</table>
+
+<h3 align='center'>Form Actions</h3>
+<table>
+    <tr>
+        <th>Id </th>
+        <th>Action </th>
+        <th>Action On </th>
+        <th>Waiting Time </th>
+    </tr>
+    <tr *ngFor="let formAction of formActions">
+        <!-- <td>{{ formAction.Id }} </td>
+        <td>{{ formAction.Name }} </td>
+        <td>{{ formAction.Id }} </td>
+        <td>{{ formAction.Name }} </td> -->
+    </tr>
+</table>

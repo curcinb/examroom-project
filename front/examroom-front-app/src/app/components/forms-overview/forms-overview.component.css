@@ -1,0 +1,14 @@
+table{
+    border:1px solid black;
+    margin-left:auto;
+    margin-right:auto; 
+    width:700px;
+}
+
+th {
+    background-color: aliceblue;
+}
+
+tr {
+    text-align: left;
+}
