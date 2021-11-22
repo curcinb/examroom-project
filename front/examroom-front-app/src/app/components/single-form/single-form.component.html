@@ -1,33 +1,33 @@
 <h1 align='center'><b>Single Form</b></h1>
 
 <h3 align='center'>Candidate</h3>
-<table>
+<table *ngIf="isDataLoaded">
     <tr>
         <th class='colored'> Id </th>
-        <td> 1 </td>
+        <td> {{ candidate.Id }} </td>
         <th class='colored'> Name </th>
-        <td> John </td>
+        <td> {{ candidate.Name }} </td>
         <th class='colored'> Phone# </th>
-        <td> 1123141 </td>
+        <td> {{ candidate.PhoneNumber }} </td>
         <th class='colored'> Email </th>
-        <td> pera@hm.com </td>
+        <td> {{ candidate.EmailId }} </td>
     </tr>
 </table>
 
 <h3 align='center'>Form</h3>
-<table>
+<table *ngIf="isDataLoaded">
     <tr>
         <th class='colored'> Form </th>
-        <td> Naziv f1 </td>
+        <td> {{ submittedForm.FormName }} </td>
         <th class='colored'> Status </th>
-        <td> Pending </td>
+        <td> {{ submittedForm.FormStatus }} </td>
         <th class='colored'> Total Waiting Time </th>
         <td> 8 sati i 45 min </td>
     </tr>
 </table>
 
 <h3 align='center'>Form Actions</h3>
-<table>
+<table *ngIf="isDataLoaded">
     <tr>
         <th>Id </th>
         <th>Action </th>
@@ -35,9 +35,9 @@
         <th>Waiting Time </th>
     </tr>
     <tr *ngFor="let formAction of formActions">
-        <!-- <td>{{ formAction.Id }} </td>
-        <td>{{ formAction.Name }} </td>
         <td>{{ formAction.Id }} </td>
-        <td>{{ formAction.Name }} </td> -->
+        <td>{{ formAction.Action }} </td>
+        <td>{{ formAction.ActionOn }} </td>
+        <td>{{ formAction.Id }} </td>
     </tr>
 </table>

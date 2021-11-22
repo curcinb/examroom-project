@@ -1,4 +1,4 @@
-<h1 align='center'><b>Super-Admin</b></h1>
+<h1 class='d-flex justify-content-center'><b>Super-Admin</b></h1>
 
 <table>
     <tr>
@@ -11,14 +11,14 @@
         <th> Form Status </th>
         <th> Action </th>
     </tr>
-    <tr *ngFor="let form of allForms">
+    <tr *ngFor="let form of allSubmittedForms">
+        <td> &nbsp; <input type="checkbox" ></td>
         <td> {{ form.Id }} </td>
-        <td> {{ form.Name }} </td>
-        <td> {{ form.Id }} </td>
-        <td> {{ form.Name }} </td>
-        <td> {{ form.Id }} </td>
-        <td> {{ form.Name }} </td>
-        <td> {{ form.Id }} </td>
-        <td> {{ form.Name }} </td>
+        <td> {{ form.CandidateName }} </td>
+        <td> {{ form.EmailId }} </td>
+        <td> {{ form.PhoneNumber }} </td>
+        <td> {{ form.FormName }} </td>
+        <td> {{ form.FormStatus }} </td>
+        <td> <input type="button" value='View' (click)="redirectToForm(form)" routerLink='/single-form'> </td>
     </tr>
 </table>

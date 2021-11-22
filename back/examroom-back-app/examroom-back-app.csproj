@@ -162,7 +162,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CandidateController.cs" />
-    <Compile Include="Controllers\FormActionController.cs" />
     <Compile Include="Controllers\FormController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -172,6 +171,7 @@
     <Compile Include="Models\Candidate.cs" />
     <Compile Include="Models\FormAction.cs" />
     <Compile Include="Models\Form.cs" />
+    <Compile Include="Models\SubmittedForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
