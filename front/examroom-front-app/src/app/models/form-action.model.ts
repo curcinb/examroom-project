@@ -4,12 +4,14 @@ export class FormAction{
     FormId : number;
     Action : string;
     ActionOn : Date;
-    
-    constructor(id : number, candidateId : number, formId : number, action : string, actionOn : Date){
+    WaitingTime : any; 
+
+    constructor(id : number, candidateId : number, formId : number, action : string, actionOn : Date, waitingTime : any){
         this.Id = id;
         this.CandidateId = candidateId;
         this.FormId = formId;
         this.Action = action;
         this.ActionOn = actionOn;
+        this.WaitingTime = waitingTime;
     }
 }

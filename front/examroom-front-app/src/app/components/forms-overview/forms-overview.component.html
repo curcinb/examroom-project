@@ -1,24 +1,33 @@
-<h1 class='d-flex justify-content-center'><b>Super-Admin</b></h1>
+<h1 align='center'><b>Super-Admin</b></h1>
 
-<table>
-    <tr>
-        <th> Click </th>
-        <th> ID </th>
-        <th> Name </th>
-        <th> Email </th>
-        <th> Phone # </th>
-        <th> Form Name </th>
-        <th> Form Status </th>
-        <th> Action </th>
-    </tr>
-    <tr *ngFor="let form of allSubmittedForms">
-        <td> &nbsp; <input type="checkbox" ></td>
-        <td> {{ form.Id }} </td>
-        <td> {{ form.CandidateName }} </td>
-        <td> {{ form.EmailId }} </td>
-        <td> {{ form.PhoneNumber }} </td>
-        <td> {{ form.FormName }} </td>
-        <td> {{ form.FormStatus }} </td>
-        <td> <input type="button" value='View' (click)="redirectToForm(form)" routerLink='/single-form'> </td>
-    </tr>
-</table>
+<div>
+    <div class='d-flex justify-content-center'>
+        <input [ngStyle]="{'visibility': mainBtnStyle}" type="button" value='Delete' (click)="deleteSelectedForms()">
+    </div>
+        
+    <table>
+        <tr>
+            <th> </th>
+            <th> ID </th>
+            <th> Name </th>
+            <th> Email </th>
+            <th> Phone # </th>
+            <th> Form Name </th>
+            <th> Form Status </th>
+            <th> Action </th>
+        </tr>
+        <tr *ngFor="let form of allSubmittedForms; let i = index">
+            <td> &nbsp; <input type="checkbox" value='form.Selected' (click)=selectForm(i)></td>
+            <td> {{ form.Id }} </td>
+            <td> {{ form.CandidateName }} </td>
+            <td> {{ form.EmailId }} </td>
+            <td> {{ form.PhoneNumber }} </td>
+            <td> {{ form.FormName }} </td>
+            <td> {{ form.FormStatus }} </td>
+            <td [ngStyle]="{'visibility': btnStyle[i]}">
+                <input type="button" value='View' (click)="redirectToForm(form)" routerLink='/single-form'>
+                <input type="button" value='Delete' (click)="deleteForm(form)">
+            </td>
+        </tr>
+    </table>
+</div>

@@ -12,3 +12,7 @@ th {
 tr {
     text-align: left;
 }
+
+#del-btn{
+    visibility: hidden;
+}

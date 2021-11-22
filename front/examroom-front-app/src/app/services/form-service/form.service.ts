@@ -22,7 +22,19 @@ export class FormService {
     return this.http.get(this.APIurl + "api/Form/GetAllFormActions/form/" + id+"/candidate/"+candidateId);
   }
 
+  calculateTotalWaitingTime(id: number, candidateId: number) {
+    return this.http.get(this.APIurl + "api/Form/CalculateTotalWaitingTime/form/" + id+"/candidate/"+candidateId);
+  }
+
   deleteForm(id: number) {
     return this.http.delete(this.APIurl + "api/Form/" + id);
+  }
+
+  deleteSubmittedForm(id: number) {
+    return this.http.delete(this.APIurl + "api/Form/DeleteSubmittedForm/" + id);
+  }
+
+  deleteSubmittedFormActions(id: number, candidateId: number) {
+    return this.http.delete(this.APIurl + "api/Form/deleteSubmittedFormActions/form/" + id+"/candidate/"+candidateId);
   }
 }

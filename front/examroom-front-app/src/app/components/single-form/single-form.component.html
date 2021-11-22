@@ -1,43 +1,46 @@
 <h1 align='center'><b>Single Form</b></h1>
 
-<h3 align='center'>Candidate</h3>
-<table *ngIf="isDataLoaded">
-    <tr>
-        <th class='colored'> Id </th>
-        <td> {{ candidate.Id }} </td>
-        <th class='colored'> Name </th>
-        <td> {{ candidate.Name }} </td>
-        <th class='colored'> Phone# </th>
-        <td> {{ candidate.PhoneNumber }} </td>
-        <th class='colored'> Email </th>
-        <td> {{ candidate.EmailId }} </td>
-    </tr>
-</table>
+<div style='float:center'>
+    <h3 align='center'>Candidate</h3>
+    <table *ngIf="isDataLoaded">
+        <tr>
+            <th class='colored'> Id </th>
+            <td> {{ candidate.Id }} </td>
+            <th class='colored'> Name </th>
+            <td> {{ candidate.Name }} </td>
+            <th class='colored'> Phone# </th>
+            <td> {{ candidate.PhoneNumber }} </td>
+            <th class='colored'> Email </th>
+            <td> {{ candidate.EmailId }} </td>
+        </tr>
+    </table>
 
-<h3 align='center'>Form</h3>
-<table *ngIf="isDataLoaded">
-    <tr>
-        <th class='colored'> Form </th>
-        <td> {{ submittedForm.FormName }} </td>
-        <th class='colored'> Status </th>
-        <td> {{ submittedForm.FormStatus }} </td>
-        <th class='colored'> Total Waiting Time </th>
-        <td> 8 sati i 45 min </td>
-    </tr>
-</table>
+    <h3 align='center'>Form</h3>
+    <table *ngIf="isDataLoaded">
+        <tr>
+            <th class='colored'> Form </th>
+            <td> {{ submittedForm.FormName }} </td>
+            <th class='colored'> Status </th>
+            <td> {{ submittedForm.FormStatus }} </td>
+            <th class='colored'> Total Waiting Time </th>
+            <td> {{ totalWaitingTimeString }} </td>
+        </tr>
+    </table>
 
-<h3 align='center'>Form Actions</h3>
-<table *ngIf="isDataLoaded">
-    <tr>
-        <th>Id </th>
-        <th>Action </th>
-        <th>Action On </th>
-        <th>Waiting Time </th>
-    </tr>
-    <tr *ngFor="let formAction of formActions">
-        <td>{{ formAction.Id }} </td>
-        <td>{{ formAction.Action }} </td>
-        <td>{{ formAction.ActionOn }} </td>
-        <td>{{ formAction.Id }} </td>
-    </tr>
-</table>
+    <h3 align='center'>Form Actions</h3>
+    <table *ngIf="isDataLoaded">
+        <tr>
+            <th>Id </th>
+            <th>Action </th>
+            <th>Action On </th>
+            <th>Waiting Time </th>
+        </tr>
+        <tr *ngFor="let formAction of formActions; let i = index">
+            <td>{{ formAction.Id }} </td>
+            <td>{{ formAction.Action }} </td>
+            <td>{{ formAction.ActionOn | date:'MM/dd/yyyy HH:MM' }} </td>
+            <td *ngIf="i == 0"> / </td>
+            <td *ngIf="i != 0"> {{ this.formActions[i].WaitingTime }} </td>
+        </tr>
+    </table>
+</div>
