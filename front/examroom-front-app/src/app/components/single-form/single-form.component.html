@@ -32,13 +32,15 @@
         <tr>
             <th>Id </th>
             <th>Action </th>
+            <th>Action On (Full time) </th>
             <th>Action On </th>
             <th>Waiting Time </th>
         </tr>
         <tr *ngFor="let formAction of formActions; let i = index">
             <td>{{ formAction.Id }} </td>
             <td>{{ formAction.Action }} </td>
-            <td>{{ formAction.ActionOn | date:'MM/dd/yyyy HH:MM' }} </td>
+            <td> {{formAction.ActionOn }} </td>
+            <td>{{ formAction.ActionOn | date:'MM/dd/yyyy HH:MM:SS' }} </td>
             <td *ngIf="i == 0"> / </td>
             <td *ngIf="i != 0"> {{ this.formActions[i].WaitingTime }} </td>
         </tr>

@@ -27,19 +27,20 @@ export class SingleFormComponent implements OnInit {
 
   constructor(private router: Router, private formService: FormService, private candidateService: CandidateService) { }
 
+  //TODO: Sync functions 
   ngOnInit(): void {
     this.extractSubmittedForm();
     this.getCompleteCandidate();
 
     setTimeout(() => {
       this.getFormActions();
-    }, 500);
+    }, 400);
 
     setTimeout(() => {
       this.calculateWaitingTime();
       this.calculateTotalWaitingTime();
       this.isDataLoaded = true;
-    }, 800);
+    }, 500);
   }
 
   extractSubmittedForm() {
